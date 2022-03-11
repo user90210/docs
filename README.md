@@ -132,6 +132,22 @@ query GetLiquidHoldings {
 ```
 - - -
 
+*Get the sales volume of hicetnunc in march 2022:*
+
+```graphql
+query VolumeInMarch {
+  events_aggregate(where: {fa2_address: {_eq: "KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton"}, implements: {_eq: "SALE"}, timestamp: {_gte: "2022-03-01", _lt: "2022-04-01"}}) {
+    aggregate {
+      sum {
+        price
+      }
+    }
+  }
+}
+```
+
+- - -
+
 *Example execution of a GraphQL query in pure JavaScript:*
 
 ```javascript
