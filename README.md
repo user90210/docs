@@ -130,6 +130,43 @@ query GetLiquidHoldings {
   }
 }
 ```
+- - -
+
+*Example execution of a GraphQL query in pure JavaScript:*
+
+```javascript
+(async () => {
+  const rawResponse = await fetch('https://unstable-do-not-use-in-production-api.teztok.com/v1/graphql', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      query: `
+        query GetLatestSales {
+          events(where: {implements: {_eq: "SALE"}}, order_by: {opid: desc}, limit: 100) {
+          type
+          timestamp
+          seller_address
+          buyer_address
+          price
+          token {
+              fa2_address
+              token_id
+              name
+              artist_address
+            }
+          }
+        }
+      `
+    })
+  });
+
+  const result = await rawResponse.json();
+  console.log(result);
+})();
+```
 
 - - -
 
