@@ -1138,6 +1138,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     buyer_address: TezosAddress,
     seller_address: TezosAddress,
     swap_id: PgBigInt,
