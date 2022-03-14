@@ -190,6 +190,8 @@ query VolumeInMarch {
 
 A list of token related events that are currently captured by the indexer.
 
+> **_NOTE:_** You can find out if an event refers to a sale by checking if it has an *implements* property set to *SALE*. All events which implement the *SALE* interface are guaranteed to have *fa2_address*, *token_id*, *seller_address*, *buyer_address*, and *price* properties. This can be useful to calculate things like 24h volume.
+
 **FA2_TRANSFER**
 
 *A token got transferred from one address to another.*
@@ -310,6 +312,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     seller_address: TezosAddress,
     buyer_address: TezosAddress,
     swap_id: PgBigInt,
@@ -377,6 +380,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     seller_address: TezosAddress,
     buyer_address: TezosAddress,
     artist_address: TezosAddress,
@@ -445,6 +449,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     buyer_address: TezosAddress,
     seller_address: TezosAddress,
     artist_address: TezosAddress,
@@ -535,6 +540,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     ask_id: PgBigInt,
     seller_address: TezosAddress,
     buyer_address: TezosAddress,
@@ -602,6 +608,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     bid_id: PgBigInt,
     price: PgBigInt,
     seller_address: TezosAddress,
@@ -670,6 +677,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     ask_id: PgBigInt,
     seller_address: TezosAddress,
     buyer_address: TezosAddress,
@@ -736,6 +744,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     offer_id: PgBigInt,
     seller_address: TezosAddress,
     buyer_address: TezosAddress,
@@ -837,6 +846,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     seller_address: TezosAddress,
     buyer_address: TezosAddress,
     artist_address: TezosAddress,
@@ -895,6 +905,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     seller_address: TezosAddress,
     buyer_address: TezosAddress,
     artist_address: TezosAddress,
@@ -951,6 +962,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     artist_address: TezosAddress,
     buyer_address: TezosAddress,
     issuer_id: PgBigInt,
@@ -978,6 +990,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     artist_address: TezosAddress,
     buyer_address: TezosAddress,
     issuer_id: PgBigInt,
@@ -1029,6 +1042,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     offer_id: PgBigInt,
     price: PgBigInt,
     buyer_address: TezosAddress,
@@ -1190,6 +1204,7 @@ A list of token related events that are currently captured by the indexer.
     fa2_address: ContractAddress,
     token_id: string(),
 
+    implements: 'SALE',
     offer_id: PgBigInt,
     seller_address: TezosAddress,
     buyer_address: TezosAddress,
