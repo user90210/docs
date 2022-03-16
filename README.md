@@ -948,6 +948,64 @@ A list of token related events that are currently captured by the indexer.
 
 - - -
 
+**OBJKT_BUY_DUTCH_AUCTION_V2**
+
+*Someone bought a token that was auctioned through a dutch auction on objkt.com (contract: KT1XXu88HkNzQRHNgAf7Mnq68LyS9MZJNoHP).*
+
+```javascript
+{
+  id: string(),
+  opid: PositiveInteger,
+  timestamp: IsoDateString,
+  level: PositiveInteger,
+  fa2_address: ContractAddress,
+  token_id: string(),
+
+  implements: 'SALE',
+  currency: string(),
+  seller_address: TezosAddress,
+  buyer_address: TezosAddress,
+  start_time: IsoDateString,
+  end_time: IsoDateString,
+  start_price: PgBigInt,
+  end_price: PgBigInt,
+  price: PgBigInt,
+  amount: PgBigInt,
+  auction_id: PgBigInt,
+}
+```
+- - -
+
+**OBJKT_SETTLE_ENGLISH_AUCTION**
+
+*An english auction was settled on objkt.com (contract: KT18p94vjkkHYY3nPmernmgVR7HdZFzE7NAk).*
+
+```javascript
+{
+    type: 'OBJKT_SETTLE_ENGLISH_AUCTION',
+    id: string(),
+    opid: PositiveInteger,
+    timestamp: IsoDateString,
+    level: PositiveInteger,
+    fa2_address: ContractAddress,
+    token_id: string(),
+
+    implements: optional('SALE'), // this is not set if buyer_address is the same as seller_address
+    seller_address: TezosAddress,
+    buyer_address: TezosAddress,
+    currency: string(),
+    reserve: PgBigInt,
+    start_time: IsoDateString,
+    end_time: IsoDateString,
+    price: PgBigInt,
+    extension_time: PgBigInt,
+    price_increment: PgBigInt,
+    auction_id: PgBigInt,
+}
+```
+
+- - -
+
 **FX_MINT**
 
 *A token was minted on fxhash (mint contract: KT1AEVuykWeuuFX7QkEAMNtffzwhe1Z98hJS).*
