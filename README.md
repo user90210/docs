@@ -1,6 +1,6 @@
 # TezTok Token Indexer
 
-An indexer that aggregates and normalizes NFT related data on the Tezos Blockchain and provides a GraphQL API for developers. Currently supported marketplaces: hicetnunc, teia, objkt.com\*, versum\*\*, fxhash.
+An indexer that aggregates and normalizes NFT related data on the Tezos Blockchain and provides a GraphQL API for developers. Currently supported marketplaces: hicetnunc, kalamint, teia, objkt.com\*, versum\*\*, fxhash.
 
 The indexer is in an experimental/unstable state and is not meant to be used in production yet. The current goal is to collect some feedback from developers in order to determine if something essential is missing and to find out who would be interested in using it. The idea is to run the indexer as a service and provide the source code on GitHub (but it still needs a bit more polishing first). We would love to hear if you are interested in using the indexer. [You can reach us on Discord](https://discord.gg/KBHxf4RbzC).
 
